@@ -1,0 +1,56 @@
+version: '3.8'
+
+volumes:
+  datafiles:
+
+
+services:
+  mysql:
+    image: mysql:8.0.0
+    container_name: mysql8
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_TCP_PORT=3306
+    volumes:
+      - datafiles:/var/lib/mysql
+    restart: always
+
+  website:
+    container_name: php74
+    privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_DBHOST=mysql
+      - MYSQL_DBPORT=3306
+      - MYSQL_DBUSER=root
+      - MYSQL_DBPASS=secret
+      #- MYSQL_DBNAME=
+    ports:
+      - 8081:80
+      - 8083:443
+    depends_on:
+      - mysql
+      - centos
+
+  centos:
+    image: centos
+    tty: true
+    privileged: true
+    container_name: centos_nfs
+    ports:
+      - 8084:80
+      - 8085:443
+
+  nfs:
+    image: haroonarcana/nfs-server:v1
+    container_name: nfs
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - SHARED_DIRECTORY=/data
+    volumes:
+      - /data/nfs-storage:/data
+    ports:
+      - 2049:2049
