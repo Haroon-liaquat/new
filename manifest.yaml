@@ -19,3 +19,7 @@ spec:
           image: new
           ports:
             - containerPort: 8080
+        - name: saarey-wadmin
+          image: new
+          ports:
+            - containerPort: 8080
