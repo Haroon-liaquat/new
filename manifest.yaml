@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saareymusic
+  labels:
+    app: saareymusic
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: saareymusic
+  template:
+    metadata:
+      labels:
+        app: saarey-web
+    spec:
+      containers:
+        - name: saarey-web
+          image: saarey-web
+          ports:
+            - containerPort: 8080
+      containers:
+        - name: saarey-admin
+          image: saarey-admin
+          ports:
+            - containerPort: 8080
