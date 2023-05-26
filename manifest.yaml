@@ -16,11 +16,11 @@ spec:
     spec:
       containers:
         - name: saarey-web
-          image: saarey-web
+          image: new
           ports:
             - containerPort: 8080
       containers:
         - name: saarey-admin
-          image: saarey-admin
+          image: new
           ports:
             - containerPort: 8080
