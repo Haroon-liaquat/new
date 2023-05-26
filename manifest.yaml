@@ -19,3 +19,4 @@ spec:
         image: haroonarcana/saarey-web-17-5-23:v6
         ports:
         - containerPort: 80
+        
