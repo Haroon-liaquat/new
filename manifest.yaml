@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: saarey-web
+        app: saareymusic
     spec:
       containers:
         - name: saarey-web
