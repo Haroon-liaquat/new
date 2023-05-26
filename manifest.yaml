@@ -1,25 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: saareymusic
+  name: saarey-deployment
   labels:
-    app: saareymusic
+    app: saarey
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: saareymusic
+      app: saarey
   template:
     metadata:
       labels:
-        app: saareymusic
+        app: saarey
     spec:
       containers:
-        - name: saarey-web
-          image: new
-          ports:
-            - containerPort: 8080
-        - name: saarey-wadmin
-          image: new
-          ports:
-            - containerPort: 8080
+      - name: saarey
+        image: docker pull haroonarcana/saarey-web-17-5-23:v6
+        ports:
+        - containerPort: 80
