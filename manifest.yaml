@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: saarey
-        image: docker pull haroonarcana/saarey-web-17-5-23:v7
+        image: haroonarcana/saarey-web-17-5-23:v7
         ports:
         - containerPort: 80
