@@ -19,8 +19,3 @@ spec:
           image: new
           ports:
             - containerPort: 8080
-      containers:
-        - name: saarey-admin
-          image: new
-          ports:
-            - containerPort: 8080
