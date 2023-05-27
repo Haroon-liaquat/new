@@ -19,4 +19,22 @@ spec:
         image: haroonarcana/saarey-web-17-5-23:v6
         ports:
         - containerPort: 80
-        
+ ---
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  namespace: dafault
+  name: saarey-svc-lb
+spec:
+  selector:
+    app: saarey
+  ports:
+    - protocol: "TCP"
+      name: "http"
+      port: 80 # The port that the service is running on in the cluster
+      targetPort: 80 # The port exposed by the service
+    - protocol: "TCP"
+      name: "https"
+      port: 443 # The port that the service is running on in the cluster
+      targetPort: 443 # The port exposed by the service
+  type: LoadBalancer # type of the service.
