@@ -42,6 +42,6 @@ RUN     dpkg -i docker-volume-netshare_0.36_amd64.deb
 
 RUN a2enmod rewrite
 
-COPY saareymusic-web /var/www/html/
+COPY saarey /var/www/html/
 EXPOSE 80/tcp
 EXPOSE 443/tcp
