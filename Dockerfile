@@ -38,11 +38,10 @@ RUN docker-php-ext-install -j$(nproc) gd gettext mysqli pdo_mysql
 RUN      touch /mnt/file.txt 
 RUN     wget https://github.com/ContainX/docker-volume-netshare/releases/download/v0.36/docker-volume-netshare_0.36_amd64.deb
 RUN     dpkg -i docker-volume-netshare_0.36_amd64.deb
-RUN     service docker-volume-netshare start
+# RUN     service docker-volume-netshare start
 
 RUN a2enmod rewrite
 
-COPY saarey /var/www/html/
-USER root
+COPY saareymusic-web /var/www/html/
 EXPOSE 80/tcp
 EXPOSE 443/tcp
