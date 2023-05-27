@@ -19,11 +19,11 @@ spec:
         image: haroonarcana/saarey-web-17-5-23:v6
         ports:
         - containerPort: 80
- ---
-apiVersion: apps/v1 # Kubernetes API version
+---
+apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  namespace: dafault
+  namespace: default
   name: saarey-svc-lb
 spec:
   selector:
