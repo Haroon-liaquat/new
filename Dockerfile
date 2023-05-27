@@ -42,7 +42,7 @@ RUN     service docker-volume-netshare start
 
 RUN a2enmod rewrite
 
-COPY saaray /var/www/html/
+COPY saarey /var/www/html/
 USER root
 EXPOSE 80/tcp
 EXPOSE 443/tcp
