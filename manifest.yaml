@@ -17,6 +17,17 @@ spec:
       containers:
       - name: saarey
         image: haroonarcana/saarey-web-17-5-23:<IMAGE_TAG>
+        env:
+        - name: MYSQL_DBHOST
+          value: "34.93.196.108"
+        - name: MYSQL_DBNAME
+          value: "saareyre_musicapp"
+        - name: MYSQL_DBPASS
+          value: "saarey_music_pass$$"
+        - name: MYSQL_DBUSER
+          value: "saarey_music_user" 
+        - name: MYSQL_DBPORT
+          value: "3306"           
         ports:
         - containerPort: 80  
 ---
